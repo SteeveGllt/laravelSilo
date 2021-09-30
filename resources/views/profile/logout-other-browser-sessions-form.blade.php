@@ -1,3 +1,4 @@
+@extends('welcome')
 <x-jet-action-section>
     <x-slot name="title">
         {{ __('Browser Sessions') }}
