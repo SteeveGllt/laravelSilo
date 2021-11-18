@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Listeners\UserLogin;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Auth\Events\Login;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,6 +20,7 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        Login::class => [UserLogin::class],
     ];
 
     /**
@@ -28,5 +31,9 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+    }
+    public function shouldDiscoverEvents()
+    {
+        return true;
     }
 }

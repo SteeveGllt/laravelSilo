@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Events\Accueil;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
+
+/*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');*/
+
 Route::get('/', function () {
+    event(new Accueil);
     return view('welcome');
 });
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');

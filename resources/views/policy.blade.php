@@ -1,4 +1,6 @@
-
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <x-guest-layout>
     <div class="pt-4 bg-gray-100">
         <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">

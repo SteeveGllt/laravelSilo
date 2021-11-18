@@ -1,4 +1,6 @@
-
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <form method="POST" action="{{ route('logout') }}">
